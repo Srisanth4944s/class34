@@ -11,6 +11,7 @@ function setup(){
 
 function draw(){
     background("white");
+    if(position !== undefined){
     if(keyDown(LEFT_ARROW)){
         writePosition(-1,0);
     }
@@ -25,7 +26,7 @@ function draw(){
     }
     drawSprites();
 }
-
+}
 function writePosition(x,y){
     database.ref("ball/position").set({
         'x':position.x+x,
